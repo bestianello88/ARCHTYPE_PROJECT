@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta http-equiv="refresh" content="0; url=experience.html" />
+    <script>window.location.replace("experience.html");</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101914" />
+    <meta name="description" content="Archetype — prototipo di diario spazio-temporale personale." />
+    <title>Archetype — La tua vita, nello spazio e nel tempo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .radial-panel{max-width:1390px;margin:20px auto 20px;overflow:hidden}.radial-content{display:grid;grid-template-columns:minmax(0,1fr) 220px;align-items:center;padding:0 22px 14px 10px}.radial-art{height:210px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 52%,#29372c 0,#1b261f 46%,transparent 76%)}.radial-art svg{position:absolute;width:100%;height:100%;inset:0;overflow:visible;transform:perspective(520px) rotateX(39deg) scale(1.1)}.spiral-track,.spiral-shadow{fill:none;stroke-linecap:round;stroke-linejoin:round}.spiral-track{stroke:#c3d1ab;stroke-width:2.4;filter:drop-shadow(0 0 5px #b8c99b70)}.spiral-shadow{stroke:#090f0b;stroke-width:6;opacity:.55}.spiral-node{stroke:#243126;stroke-width:2}.node-one{fill:#d9bf95}.node-two{fill:#9eb99d}.node-three{fill:#a99ec4}.node-four{fill:#a8c5d2}.spiral-origin{fill:#f1e8d4;filter:drop-shadow(0 0 4px #fff)}.radial-art svg text{fill:#aebba6;font:8px "DM Mono",monospace;letter-spacing:.7px}.radial-halo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid #aabe9517;border-radius:50%;width:120px;height:80px}.halo-b{width:235px;height:140px}.radial-legend{display:grid;gap:13px;padding:15px 0 15px 20px;border-left:1px solid #2e3a30;color:#aab5a8;font-size:9px}.radial-legend>span{display:flex;align-items:center;gap:8px}.radial-dot{width:7px;height:7px;border-radius:50%;display:inline-block}.memory-dot{background:#d9bf95}.work-dot{background:#a99ec4}.explore-dot{background:#a8c5d2}.radial-formula{border-top:1px solid #344136;padding-top:15px;margin-top:2px}.radial-formula code,.radial-formula small{display:block}.radial-formula code{color:#d0dabb;font:11px "DM Mono",monospace}.radial-formula small{color:#7e8d7f;font-size:9px;margin-top:5px}@media(max-width:900px){.radial-panel{margin:20px 22px}.radial-content{grid-template-columns:1fr;padding:0 12px 14px}.radial-art{height:195px}.radial-legend{grid-template-columns:repeat(2,minmax(0,1fr));border-left:0;border-top:1px solid #2e3a30;padding:13px 0 0}.radial-formula{grid-column:1/-1;margin-top:0;padding-top:10px}}@media(max-width:600px){.radial-panel{margin:20px 14px}.radial-panel .panel-heading{align-items:flex-start;flex-direction:column;gap:10px}.radial-art{height:165px}.radial-legend{font-size:8px}}
+    </style>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="Archetype, panoramica">
+          <span class="brand-mark"><i></i><i></i><i></i></span>
+          <span>archetype<span class="brand-period">.</span></span>
+        </a>
+        <div class="workspace-label">SPAZIO PERSONALE</div>
+        <div class="profile"><div class="avatar">F</div><div><strong>Francesco B.</strong><small>Il mio archivio</small></div><span class="chevron">⌄</span></div>
+        <div class="nav-label">ESPLORA</div>
+        <nav class="main-nav" aria-label="Navigazione principale">
+          <button class="nav-item active" data-view="overview"><span class="nav-icon">◉</span>Panoramica</button>
+          <button class="nav-item" data-view="map"><span class="nav-icon">⌖</span>Mappa della vita</button>
+          <button class="nav-item" data-view="timeline"><span class="nav-icon">◎</span>Spirale temporale</button>
+          <button class="nav-item" data-view="story"><span class="nav-icon">▤</span>La mia storia</button>
+          <button class="nav-item" data-view="archive"><span class="nav-icon">⬡</span>Archivio verificabile</button>
+        </nav>
+        <div class="nav-label domains-label">I TUOI ARCHETIPI</div>
+        <nav class="domain-nav" aria-label="Filtra per ambito">
+          <button data-domain="all" class="domain-link selected"><span class="domain-dot all-dot"></span>Tutti gli eventi</button>
+          <button data-domain="personal"><span class="domain-dot personal-dot"></span>Personale</button>
+          <button data-domain="professional"><span class="domain-dot professional-dot"></span>Professionale</button>
+          <button data-domain="legal"><span class="domain-dot legal-dot"></span>Legale</button>
+          <button data-domain="explore"><span class="domain-dot explore-dot"></span>Esplorazione</button>
+        </nav>
+        <div class="sidebar-bottom"><div class="privacy-badge"><span class="lock-icon">⌑</span><div><strong>I tuoi dati, tuoi.</strong><small>Demo privata · dati locali</small></div><span class="green-pulse"></span></div><button class="help-link" type="button">? <span>Come funziona Archetype</span></button></div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar"><div class="breadcrumbs"><span>Il mio spazio</span><b>/</b><span id="breadcrumb-current">Panoramica</span></div><div class="top-actions"><span class="prototype-chip"><span></span>PROTOTIPO</span><button class="icon-button" aria-label="Notifiche">♧</button><button class="top-avatar" aria-label="Profilo Francesco B.">F</button></div></header>
+        <div class="page-content">
+          <section class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-line"></span>IL TUO ATLANTE PERSONALE</div><h1 id="page-title">La tua vita,<br /><em>nello spazio e nel tempo.</em></h1><p class="intro" id="page-intro">Ogni luogo lascia una traccia. Ogni traccia racconta qualcosa di te.</p></div><button id="new-event" class="primary-button"><span>＋</span> Registra un momento</button></section>
+
+          <section class="metric-row" aria-label="Riepilogo archivio">
+            <article class="metric-card"><div class="metric-top"><span>TRACCE RACCOLTE</span><span class="metric-symbol">◉</span></div><div class="metric-value" id="metric-events">24</div><div class="metric-note"><span class="tiny-green">↗</span> nel tuo archivio personale</div></article>
+            <article class="metric-card"><div class="metric-top"><span>LUOGHI ATTRAVERSATI</span><span class="metric-symbol">⌖</span></div><div class="metric-value">08</div><div class="metric-note">in <strong>3 città</strong> nel tempo</div></article>
+            <article class="metric-card"><div class="metric-top"><span>INTEGRITÀ VERIFICATA</span><span class="metric-symbol">⬡</span></div><div class="metric-value">100<span class="metric-percent">%</span></div><div class="metric-note"><span class="status-dot"></span>ancoraggi dimostrativi</div></article>
+            <article class="metric-card highlight-metric"><div class="metric-top"><span>LA TUA STORIA</span><span class="metric-symbol">✳</span></div><div class="metric-value">In divenire<span class="metric-spark">↗</span></div><div class="metric-note">24 momenti, una prospettiva unica</div></article>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="panel map-panel">
+              <div class="panel-heading"><div><div class="eyebrow small-eyebrow">GEOGRAFIA DEI RICORDI</div><h2>La mappa della tua vita</h2></div><button class="text-link" data-open-view="map">Esplora la mappa <span>↗</span></button></div>
+              <div class="map-wrap">
+                <div class="map-grid"></div>
+                <svg class="map-art" viewBox="0 0 760 400" role="img" aria-label="Mappa stilizzata dei luoghi visitati nell'Italia settentrionale e centrale">
+                  <defs><linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#26362c"/><stop offset="1" stop-color="#19261f"/></linearGradient><pattern id="contour" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M0 42 Q20 10 42 42 T84 42 M-24 70 Q0 42 24 70 T72 70" fill="none" stroke="#3a5041" stroke-width=".7" opacity=".45"/></pattern></defs>
+                  <path d="M40 35h680v330H40z" fill="url(#contour)" opacity=".45"/>
+                  <path d="M117 70 187 56l44 24 60-15 31 26 62-13 31 18 68-19 42 23 43-4 37 24-16 36-31 9-10 28-31 9-15 31-39-9-22 15-12 32-33 4-22 31-33-8-17-24-29 3-28-18-39 5-23-22-37 10-19-20-31 5-17-30 20-34-12-22 10-33-17-25Z" fill="url(#land)" stroke="#536b58" stroke-width="1.5"/>
+                  <path d="M150 96q45 25 90 0t95 2q42 24 81-3t89 8q42 23 91 9M132 150q47-17 80 9t77-4q51-26 87 8t87 4q38-9 79 18M159 215q44-21 78 3t79 2q45-14 80 19t68-3q38-26 70 0M193 278q46-18 78 6t74 4q39-19 68 1" fill="none" stroke="#526956" stroke-width="1" opacity=".65"/>
+                  <path d="M264 106 Q351 134 431 117 T565 154 Q497 198 389 197 T300 264" fill="none" stroke="#c2a276" stroke-width="1.5" stroke-dasharray="3 7" opacity=".7"/>
+                  <g class="map-point active-point" data-event="e1" transform="translate(388 178)"><circle r="18" class="point-glow"/><circle r="8" class="point-core"/><circle r="3" class="point-center"/></g>
+                  <g class="map-point" data-event="e2" transform="translate(306 220)"><circle r="16" class="point-glow"/><circle r="7" class="point-core"/><circle r="2.5" class="point-center"/></g>
+                  <g class="map-point" data-event="e3" transform="translate(519 131)"><circle r="16" class="point-glow"/><circle r="7" class="point-core"/><circle r="2.5" class="point-center"/></g>
+                  <g class="map-point" data-event="e4" transform="translate(433 256)"><circle r="16" class="point-glow"/><circle r="7" class="point-core"/><circle r="2.5" class="point-center"/></g>
+                  <text x="366" y="155">BOLOGNA</text><text x="281" y="243">FIRENZE</text><text x="499" y="111">VENEZIA</text><text x="415" y="279">ROMA</text><text x="67" y="345" class="map-caption">ITALIA · LUOGHI SIGNIFICATIVI</text>
+                </svg>
+                <div class="map-legend"><span><i class="legend-dot"></i>Momento registrato</span><span><i class="legend-path"></i>Percorso nel tempo</span></div>
+              </div>
+              <div class="map-footer"><div><span class="footer-pin">⌖</span><span id="selected-place">Bologna, Italia</span></div><span id="selected-coordinates">44.4949° N&nbsp;&nbsp; 11.3426° E</span></div>
+            </article>
+
+            <article class="panel moment-panel">
+              <div class="panel-heading"><div><div class="eyebrow small-eyebrow">TRACCIA SELEZIONATA</div><h2 id="moment-heading">Un momento da ricordare</h2></div><button class="more-button" aria-label="Altre opzioni">···</button></div>
+              <div class="moment-date"><span class="date-icon">▦</span><span id="moment-date">12 giugno 2025 · 10:42</span></div>
+              <div class="moment-image"><div class="sun-disc"></div><div class="horizon horizon-back"></div><div class="horizon horizon-front"></div><div class="image-label"><span>✳</span> UN FRAMMENTO DI VITA</div></div>
+              <div class="moment-body"><div class="moment-tags"><span class="tag tag-personal" id="moment-tag">PERSONALE</span><span class="verified-label"><span>✓</span> INTEGRITÀ VERIFICATA</span></div><p id="moment-description">Una mattina lenta sotto i portici. Il profumo del caffè, la luce che filtra tra le arcate — e la sensazione di essere esattamente dove dovrei essere.</p><div class="moment-meta"><span>ARCHETYPE ID</span><code id="moment-id">ARC-2025-0612-01</code><button class="copy-button" id="copy-id" aria-label="Copia ID">▢</button></div></div>
+            </article>
+          </section>
+
+          <section class="panel journey-panel"><div class="panel-heading journey-heading"><div><div class="eyebrow small-eyebrow">TRACCE NEL TEMPO</div><h2>Una vita, una trama</h2><p class="panel-subtitle">Ogni punto è un momento. Insieme, disegnano il tuo percorso.</p></div><div class="journey-controls"><button class="period-button active" data-period="all">Tutto</button><button class="period-button" data-period="year">2025</button><button class="text-link" data-open-view="timeline">Apri spirale temporale <span>↗</span></button></div></div><div class="timeline-chart"><div class="chart-y-labels"><span>Presenza</span><span>Ritorno</span><span>Scoperta</span></div><div class="chart-area"><div class="chart-gridline g1"></div><div class="chart-gridline g2"></div><div class="chart-gridline g3"></div><svg class="journey-svg" viewBox="0 0 800 168" preserveAspectRatio="none" aria-label="Andamento dei momenti nel tempo"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8c9a3" stop-opacity=".25"/><stop offset="1" stop-color="#b8c9a3" stop-opacity="0"/></linearGradient></defs><path d="M0 137 C38 118 52 130 88 115 S136 130 160 95 S206 99 235 104 S273 87 301 89 S339 43 369 69 S411 89 439 61 S476 83 500 57 S548 74 574 48 S619 72 649 42 S700 63 727 34 S771 48 800 12 L800 168 L0 168Z" fill="url(#chartFill)"/><path d="M0 137 C38 118 52 130 88 115 S136 130 160 95 S206 99 235 104 S273 87 301 89 S339 43 369 69 S411 89 439 61 S476 83 500 57 S548 74 574 48 S619 72 649 42 S700 63 727 34 S771 48 800 12" fill="none" stroke="#bacaa5" stroke-width="2" vector-effect="non-scaling-stroke"/><g class="chart-points"><circle cx="160" cy="95" r="4"/><circle cx="301" cy="89" r="4"/><circle cx="369" cy="69" r="5"/><circle cx="500" cy="57" r="4"/><circle cx="649" cy="42" r="4"/><circle cx="727" cy="34" r="4"/></g></svg><button class="chart-tooltip" data-event="e1"><span>12 GIU 2025</span><strong>Un momento da ricordare</strong><i>↗</i></button><div class="chart-x-labels"><span>GEN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAG</span><span>GIU</span><span>LUG</span><span>AGO</span><span>SET</span><span>OTT</span><span>NOV</span><span>DIC</span></div></div></div></section>
+
+          <section class="bottom-grid"><article class="panel recent-panel"><div class="panel-heading"><div><div class="eyebrow small-eyebrow">ULTIME TRACCE</div><h2>Momenti che contano</h2></div><button class="text-link" data-open-view="archive">Tutto l'archivio <span>↗</span></button></div><div class="event-list" id="event-list"></div></article><article class="story-card"><div class="story-orbit orbit-one"></div><div class="story-orbit orbit-two"></div><div class="story-star">✳</div><div class="eyebrow small-eyebrow">AUTOBIOGRAFIA IN DIVENIRE</div><h2>La tua storia<br />non è un feed.<br /><em>È una costellazione.</em></h2><p>Riguarda i tuoi luoghi, riconosci i tuoi ritmi, ritrova i fili che collegano i momenti.</p><button class="story-button" data-open-view="story">Ricomponi la mia storia <span>→</span></button><div class="story-footnote">SOLO TU SCEGLI COSA RICORDARE</div></article></section>
+          <footer class="page-footer"><span><b>archetype.</b> Il tempo prende forma.</span><span>Prototipo interattivo · dati dimostrativi</span><button id="privacy-info">Come proteggiamo le tue tracce <span>↗</span></button></footer>
+        </div>
+          <section class="panel radial-panel"><div class="panel-heading journey-heading"><div><div class="eyebrow small-eyebrow">GEOMETRIA DEL TEMPO</div><h2>La spirale dei ritorni</h2><p class="panel-subtitle">Il tempo si allarga dal centro: ogni giro porta con sé un luogo, un gesto, una versione di te.</p></div><button class="text-link" data-open-view="story">Dai forma al racconto <span>↗</span></button></div><div class="radial-content"><div class="radial-art"><div class="radial-halo halo-a"></div><div class="radial-halo halo-b"></div><svg viewBox="0 0 620 230" role="img" aria-label="Spirale temporale dimostrativa: il percorso si allarga con il passare dei mesi"><path class="spiral-shadow" d="M307 116 C300 110 304 99 314 100 C328 101 335 116 327 127 C315 143 290 137 285 119 C278 93 299 77 324 82 C355 88 365 122 348 145 C326 174 281 167 267 136 C247 93 279 53 321 57 C372 61 396 113 371 157 C342 206 271 200 245 152 C214 92 260 29 321 31 C392 32 428 105 394 168 C354 235 258 232 222 169 C179 89 240 4 321 5 C411 4 459 99 417 179 C367 263 246 262 198 184 C145 86 219 -19 321 -20" transform="translate(0 12)"/><path class="spiral-track" d="M307 116 C300 110 304 99 314 100 C328 101 335 116 327 127 C315 143 290 137 285 119 C278 93 299 77 324 82 C355 88 365 122 348 145 C326 174 281 167 267 136 C247 93 279 53 321 57 C372 61 396 113 371 157 C342 206 271 200 245 152 C214 92 260 29 321 31 C392 32 428 105 394 168 C354 235 258 232 222 169 C179 89 240 4 321 5 C411 4 459 99 417 179 C367 263 246 262 198 184 C145 86 219 -19 321 -20"/><circle class="spiral-node node-one" cx="314" cy="100" r="5"/><circle class="spiral-node node-two" cx="285" cy="119" r="4"/><circle class="spiral-node node-three" cx="371" cy="157" r="4"/><circle class="spiral-node node-four" cx="245" cy="152" r="4"/><circle class="spiral-origin" cx="307" cy="116" r="3"/><text x="328" y="96">GIU ‘25</text><text x="246" y="116">MAR ‘25</text><text x="382" y="158">RITORNO</text><text x="189" y="155">SCOPERTA</text><text x="296" y="133">ORA</text></svg></div><div class="radial-legend"><span><i class="radial-dot memory-dot"></i>Ricordo personale</span><span><i class="radial-dot work-dot"></i>Esperienza professionale</span><span><i class="radial-dot explore-dot"></i>Nuovo luogo</span><div class="radial-formula"><code>R(t) = R₀ + k · Δt</code><small>tempo che diventa spazio</small></div></div></div></section>
+  </main>
+    </div>
+
+    <dialog id="event-dialog" class="event-dialog"><form id="event-form" method="dialog"><div class="dialog-top"><div><div class="eyebrow small-eyebrow">NUOVA TRACCIA</div><h2>Registra un momento</h2></div><button type="button" class="dialog-close" aria-label="Chiudi">×</button></div><p class="dialog-intro">Un luogo, un istante, ciò che vuoi ricordare. I campi sono dimostrativi: nulla viene inviato o salvato.</p><label>Che cosa vuoi ricordare?<input name="title" required maxlength="72" placeholder="Es. La prima volta che…" /></label><div class="form-row"><label>Luogo<input name="place" required placeholder="Città, Paese" /></label><label>Ambito<select name="domain"><option value="personal">Personale</option><option value="professional">Professionale</option><option value="legal">Legale</option><option value="explore">Esplorazione</option></select></label></div><label>La traccia<textarea name="description" rows="3" maxlength="260" placeholder="Che cosa rende speciale questo momento?" required></textarea></label><div class="privacy-note"><span>⌑</span><div><strong>Il ricordo resta tuo.</strong><small>Questa demo crea una scheda locale e un file .archtype di esempio.</small></div></div><div class="dialog-actions"><button type="button" class="secondary-button dialog-close">Annulla</button><button class="primary-button" type="submit">Crea la traccia <span>→</span></button></div></form></dialog>
+
+    <dialog id="info-dialog" class="event-dialog info-dialog"><button type="button" class="dialog-close info-close" aria-label="Chiudi">×</button><div class="eyebrow small-eyebrow">IL PRINCIPIO ARCHETYPE</div><h2>Una traccia verificabile.<br /><em>Una storia che scegli tu.</em></h2><p>Nel concept, ogni file <code>.archtype</code> unisce identità, istante, coordinate e un payload contestuale. Il contenuto viene riassunto con SHA-256; ancoraggi aggregati (Merkle Root) possono attestare l'integrità senza pubblicare ogni evento.</p><div class="info-steps"><div><b>01</b><span>Registra un evento con timestamp e luogo.</span></div><div><b>02</b><span>Verifica l'integrità del dato e conserva la prova.</span></div><div><b>03</b><span>Visualizza luoghi e ritorni nel tempo.</span></div><div><b>04</b><span>Seleziona i ricordi che diventano racconto.</span></div></div><p class="demo-warning">Questo prototipo non usa GPS, non scrive su blockchain e non carica dati personali: le tracce precompilate sono esempi.</p></dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
